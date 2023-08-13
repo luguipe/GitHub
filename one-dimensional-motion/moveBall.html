@@ -1,0 +1,35 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+
+<script>
+
+let velocity = 20;
+let position = 0;
+let ball = document.getElementById('ball');
+
+// YOUR CODE 
+// ----------------
+// position = position + velocity;
+// ball.style.left = position + 'px';
+function moveBall(){
+  ball.style.left = position + 'px';
+  position = position + velocity;
+  if (position < 500) {
+    setTimeout(moveBall,50);
+  } 
+}
+ moveBall();
+
+//   while (i < data.length) {
+//     let ball = data[i]
+//     create(ball.x,ball.y,ball.color)
+//     i = i+1;
+// }
+</script>

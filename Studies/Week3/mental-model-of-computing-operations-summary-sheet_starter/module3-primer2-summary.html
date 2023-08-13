@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Mental Model of Computing Operations</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" type="text/css" href="./proxima-nova-web-fonts-master/fonts/fonts.css" />
+</head>
+
+<body>
+  <div class="container">
+    <img src="mitxprologo.jpg" alt="MIT XPro Logo" width="250px" height="80px">
+    <h1 class="header-text">Mental Model of Computing Operations</h1>
+  </div>
+  <p>Please review the concepts covered this module. </p>
+
+<h2>Scope</h2>
+<p>Thethree types of variable scope we&#39;ve discussed in JavaScript are global, function, and block. </p>
+<h3>Global</h3>Global scope refers to data stored in variables that are accessible anywhere in your program. Globally
+    scoped variables are declared outside of a function, but are available inside any of the functions in your program.
+</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> cars = [<span class="hljs-string">"Audi"</span>, <span class="hljs-string">"BMW"</span>, <span class="hljs-string">"Ford"</span>];
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCars</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-built_in">console</span>.log(cars);
+}
+
+getCars();
+&gt;&gt;[<span class="hljs-string">"Audi"</span>, <span class="hljs-string">"BMW"</span>, <span class="hljs-string">"Ford"</span>];
+<span class="hljs-built_in">console</span>.log(cars);
+&gt;&gt;[<span class="hljs-string">"Audi"</span>, <span class="hljs-string">"BMW"</span>, <span class="hljs-string">"Ford"</span>];
+</code></pre>
+<h3>Function</h3> Function (or local) scope refers to data stored in variables that are declared inside of a function and
+    are only available to be accessed inside of the said function. </p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCars</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">var</span> cars = [<span class="hljs-string">"Audi"</span>, <span class="hljs-string">"BMW"</span>, <span class="hljs-string">"Ford"</span>];
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"cars"</span>);
+}
+
+getCars();
+&gt;&gt;[<span class="hljs-string">"Audi"</span>, <span class="hljs-string">"BMW"</span>, <span class="hljs-string">"Ford"</span>];
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"cars"</span>);
+&gt;&gt;Uncaught <span class="hljs-built_in">ReferenceError</span>: cars is not defined
+</code></pre>
+<h3>Block</h3> Block scope refers to variables which are declared using the keyword <code>let</code>, and are only
+    available inside the block of code inside the function in which they are declared. </p>
+<pre><code class="lang-js">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>{
+ <span class="hljs-keyword">var</span> bar = <span class="hljs-number">1</span>;
+   <span class="hljs-keyword">if</span>(bar &lt; <span class="hljs-number">10</span>){
+    <span class="hljs-keyword">let</span> baz = <span class="hljs-string">"hello!"</span>
+     <span class="hljs-built_in">console</span>.log(baz);
+     bar++;
+   }<span class="hljs-keyword">else</span>{
+     <span class="hljs-keyword">let</span> baz = <span class="hljs-string">"goodbye."</span>
+     <span class="hljs-built_in">console</span>.log(baz);
+  }
+}
+
+&gt;&gt;hello! 
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>{
+ <span class="hljs-keyword">var</span> bar = <span class="hljs-number">10</span>;
+   <span class="hljs-keyword">if</span>(bar &lt; <span class="hljs-number">10</span>){
+    <span class="hljs-keyword">let</span> baz = <span class="hljs-string">"hello!"</span>
+     <span class="hljs-built_in">console</span>.log(baz);
+     bar++;
+   }<span class="hljs-keyword">else</span>{
+     <span class="hljs-keyword">let</span> baz = <span class="hljs-string">"goodbye."</span>
+     <span class="hljs-built_in">console</span>.log(baz);
+  }
+}
+
+&gt;&gt;goodbye.
+</code></pre>
+<h2>Primitive types</h2>
+<p>In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods.
+    The 6 primitive data types are string, number, bigint, Boolean, undefined, and symbol. There is also null.</p>
+<p>All primitives are immutable, i.e., they cannot be altered. It is important not to confuse a primitive itself with a
+    variable assigned a primitive value. The variable may be reassigned a new value, but the existing value can not be
+    changed in the ways that objects, arrays, and functions can be altered.</p>
+<h2>Factory model</h2>
+<p>When creating objects, it is much faster to make a &quot;blueprint&quot; of the object and use that to
+    create many different copies of the object with different parameters. For example, if you want to make a graph with
+    many different coordinate points on it, it is faster to write a function which generates those points with the
+    parameters you put into it, than to write new instructions on how to make a point every time you wish to create
+    one. </p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> graphPoints = [];
+<span class="hljs-keyword">const</span> makeCoordinatePoint = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makeCoordinatePoint</span>(<span class="hljs-params">x,y</span>)</span>{
+ <span class="hljs-keyword">let</span> point = {<span class="hljs-attr">xCoordiate</span>:x, <span class="hljs-attr">yCoordinate</span>:y};
+ <span class="hljs-keyword">return</span> point;
+}
+
+<span class="hljs-keyword">let</span> pointOne = makeCoordinatePoint(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+graphPoints.push(pointOne);
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(graphPoints));
+&gt;&gt;[{<span class="hljs-string">"xCoordiate"</span>:<span class="hljs-number">3</span>,<span class="hljs-string">"yCoordinate"</span>:<span class="hljs-number">4</span>}]
+
+<span class="hljs-keyword">let</span> pointTwo = makeCoordinatePoint(<span class="hljs-number">7</span>, <span class="hljs-number">24</span>);
+graphPoints.push(pointTwo);
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(graphPoints));
+&gt;&gt;[{<span class="hljs-string">"xCoordiate"</span>:<span class="hljs-number">3</span>,<span class="hljs-string">"yCoordinate"</span>:<span class="hljs-number">4</span>},{<span class="hljs-string">"xCoordiate"</span>:<span class="hljs-number">7</span>,<span class="hljs-string">"yCoordinate"</span>:<span class="hljs-number">24</span>}]
+</code></pre>
+<h3 id="sources-">Sources:</h3>
+<p><a href="https://developer.mozilla.org/en-US/">MDN</a></p>
+
+<p class="footer">
+  © MIT xPRO 2020. All rights reserved.
+  </p>
