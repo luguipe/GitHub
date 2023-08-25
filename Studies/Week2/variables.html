@@ -16,5 +16,19 @@
         [9,10,11,12]
 
     ]
+    const arr = [10, 10, 16, 12];
+    function incrementByOne(arr) {
+  // arr is an array of integers(numbers), Increment all items in the array by
+    for (let i = 0; i < arr.lenght; i++ ) {
+    console.log('before ', arr[i]);
+    arr[i] = arr[i] + 1;
+    console.log('after ', arr[i]);
+  }
+  // return the array
+  return arr;
+}
+
+incrementByOne(arr);
+
 
 </script>
