@@ -1,0 +1,71 @@
+<div id="container">
+  <!-- populated by JS-->
+</div>
+<script src="./boston.js"></script>
+<script>
+  let person = boston.data;
+  const len = boston.data.length;
+
+
+  function renderBoston(boston, container) {
+     // boston is an array
+    var html = '';
+    for (let i = 0; i < len; i++) {
+      html += '<li class="post">' +
+        '<h2>' + person[i][8] + '</h2>' +
+        '<h3>' + person[i][11] + '</h3>'
+    }
+    container.innerHTML = '<ul id = "boston">' + html + '</ul>';
+
+    // let maximun = -Infinity;
+    // let highestSalary= 0;
+    // let salary = 0;
+
+    // for (let i = 0; i < person.length; i++) {
+    //   salary =  person[i][11];
+
+    //   console.log('Person ' + person[i][8] + ' salary $' + salary );
+    //   console.log('the highest salary is ' + maximun);
+
+    //   if (salary >= maximun) {
+
+    //     maximun = salary;
+
+    //   }
+    // }
+    // '<h2>' + 'the highest salary is ' + maximun + '</h2>'
+    //   console.log('the highest salary is ' + maximun);  
+  }
+
+  function TopSalaries(boston, container){
+      
+      let highestSalary = person.sort((a,b) => b[11] - a[11]).slice(0,5)
+      const len = highestSalary.length;
+
+      let html = '';
+      for (let i = 0; i < len; i++) {
+        html +=
+        '<li class = "top">' + 
+        '<h2>' + highestSalary[i][8] + '<h2>' +
+        '<h3>'  + highestSalary[i][11] + '<h3>';
+      }
+      container.innerHTML = '<ul id = "highestSalary">' + html + '</ul>';
+    }
+
+  function TopEmployees(boston, container){
+    let html ='';
+    let topEmployees = person.filter((a) => a[11] > 200000);
+
+    for (let i = 0; i < len; i++) {
+      html += 
+      '<li class="top">' + 
+      '<h2>' + topEmployees[i][8] + '</h2>' +
+      '<h2>' + topEmployees[i][11] + '</h2>';
+    }
+    container.innerHTML = '<ul id = "topEmployess">' + html + '</ul>';
+  }
+  TopSalaries(boston, document.getElementById('container'));
+  TopEmployees(boston, document.getElementById('container'));
+  //renderBoston(boston, document.getElementById('container'));
+  
+</script>
