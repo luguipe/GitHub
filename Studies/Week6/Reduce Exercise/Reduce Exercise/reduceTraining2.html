@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const list = ['hi', 'boo','boo','hello','ada','ada','ada'];
+
+        //add array items using reduce
+        const total = list.reduce(function(previous, current) {
+           if (current in previous){
+                previous[current] += 1;
+           }
+           else {
+                previous[current] = 1; 
+           }
+           return previous; 
+    },{});
+
+    //write to console;
+    console.log('Result: ' + JSON.stringify(total));
+
+    </script>
+</body>
+</html>

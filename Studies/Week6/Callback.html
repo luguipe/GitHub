@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let list = [5,8,9,2,7,6,3,1,4];
+
+    function callback(list){
+        let newList = []
+        for (let i = 0; i < list.length; i++) {
+            if(list[i]<5){
+                newList.push(list[i]);
+            }
+        }
+        return newList;
+    }
+
+    function filter(list,callback){
+        return callback(list);
+    }
+
+    const filtered = filter (list, callback)
+
+</script>
+    
+</body>
+</html>

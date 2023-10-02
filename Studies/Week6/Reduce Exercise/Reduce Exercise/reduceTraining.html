@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numbers = [1,1,2,3,5,8];
+
+        //add array items using reduce
+        const total = numbers.reduce(function(previous, current) {
+            return previous + current;
+    },0);
+
+    //write to console;
+    console.log('Total: ' + total);
+
+    </script>
+</body>
+</html>
