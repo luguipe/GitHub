@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dynamic</title>
+    <style>
+        .on{
+            background: orange;
+        }
+        div{
+            padding: 50;
+            text-align: center;
+            border-style: solid;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="toggle()">TOGGLE</button>
+    <button onclick="start()">START</button>
+    <button onclick="stop()">STOP</button>
+    <div id="target">Target</div>
+    <script>
+        function toggle(){
+            const element = document.getElementById('target');
+            element.classList.toggle('on');
+        }
+        let timer = null;
+
+        function start(){
+            timer = setTimeout(() => {
+                toggle();
+                start();
+            },1000);
+        }
+        function stop(){
+            clearTimeout(timer);
+        }
+    </script>
+</body>
+</html>

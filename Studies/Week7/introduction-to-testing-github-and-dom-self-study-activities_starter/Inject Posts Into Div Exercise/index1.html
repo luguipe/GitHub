@@ -1,0 +1,24 @@
+<div id="container"><!-- populated by js--></div>
+
+<!--<script src="./posts.js"></script>-->
+<script>
+    const url = "https://pollysnips.s3.amazonaws.com/posts.json";
+    function renderPosts (posts){
+    //const html = '<h1> Hello World</h1>'
+    const len = posts.length; //posts is an array
+    let html = '';
+    for(let i=0; i< len; i++){
+        html += '<li class="post">' +
+            '<h2>' + posts[i].title + '</h2>' +
+            '<h3>' + posts[i].content + '</h3>'
+    }
+    container.innerHTML = '<ul id="posts">' + html + '</ul>';
+};
+//renderPosts(posts, document.getElementById('container'));
+async function getPosts(url) {
+    let response = await fetch(url);
+    let posts = await response.json();
+    renderPosts(posts);
+}
+getPosts(url);
+</script>

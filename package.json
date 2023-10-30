@@ -1,0 +1,18 @@
+{
+  "name": "github",
+  "version": "1.0.0",
+  "description": "Hi There, If you get to here,  you probably  want to know what I've being doing with my time, so, here it is, these folders contains every line of code that I worked since i started my journey at **MIT - Full Stack Developement with MERN** its a be disorganized but the folders title usually refers to what you will see inside, I'm including more readme's files but that will take some time since I must focus at the content of the course, for more information you can contact in these options below.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no jest specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}
