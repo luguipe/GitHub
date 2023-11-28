@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Map</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
+    <style>
+      body { margin: 0; padding: 0; }
+      #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script>
+
+    // get token at https://account.mapbox.com
+    mapboxgl.accessToken = '';
+
+    var map = new mapboxgl.Map({
+        container: 'map', // div id
+        style: 'mapbox://styles/mapbox/streets-v11', // style
+        center: [-71.101,42.358], // location [lng, lat]
+        zoom: 10 // zoom
+    });
+
+</script>
+</body>
+</html>
+
+
+<!-- 
+
+mapbox://styles/mapbox/streets-v11
+mapbox://styles/mapbox/outdoors-v11
+mapbox://styles/mapbox/light-v10
+mapbox://styles/mapbox/dark-v10
+mapbox://styles/mapbox/satellite-v9
+mapbox://styles/mapbox/satellite-streets-v11
+
+ -->
