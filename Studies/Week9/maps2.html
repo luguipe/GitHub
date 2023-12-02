@@ -4,41 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add a default marker</title>
+    <link rel="stylesheet" href="map.css">
     <!-- <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script> -->
-    <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9i5OEsUVJAXVCM6cF5CsyXuNhL62irSo&callback=console.debug&libraries=maps,marker&v=beta">
-    </script>
+    <!-- <link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" /> -->
+    <script src="mapanimation.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9i5OEsUVJAXVCM6cF5CsyXuNhL62irSo&callback=initMap"></script>
+  
 
-<style>
-  /* body { margin: 0; padding: 0; } */
-  #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+<style >
 
-/* .map-overlay {
-  position: absolute;
-  left: 0;
-  padding: 10px;
-} */
-/* Always set the map height explicitly to define the size of the div
- * element that contains the map. */
- gmp-map {
-  height: 100%;
-}
-
-/* Optional: Makes the sample page fill the window. */
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
- 
 </style>
 </head>
 <body>
-    <!-- <div id="map"></div> -->
+    <div id="map">
+        <!-- populate by JS-->
+    </div> 
 
     <div class="map-overlay top">
-        <button style="font-size: 2em;" onclick="move()">
+        <button style="font-size: 2em;" id="moveButton">
             Show Stops betweem MIT and Harvard
         </button>
         
@@ -46,52 +29,16 @@ body {
     <!-- <gmp-map center="-28.00147247314453,153.41624450683594" zoom="14" map-id="DEMO_MAP_ID">
         <gmp-advanced-marker position="-28.00147247314453,153.41624450683594" title="My location">
         </gmp-advanced-marker>
-      </gmp-map>
-    -->
-    <iframe src="https://storage.googleapis.com/maps-solutions-bj0f6jeaix/commutes/un39/commutes.html"
-  width="50%" height="50%"
-  style="border:0;"
-  loading="lazy">
-</iframe>
-     <script>
-    //     //mapboxgl.accessToken = 'pk.eyJ1IjoibHVndWlwZSIsImEiOiJjbG91dzc0YW4wamtyMmtwOGVmeWE2YWxoIn0.8rYhKLmmhVCXgzZUBa5Mtw';
+      </gmp-map> -->
+   
+    <!-- <iframe src="https://storage.googleapis.com/maps-solutions-bj0f6jeaix/commutes/un39/commutes.html"
+        width="50%" height="50%"
+        style="border:0;"
+        loading="lazy">
+    </iframe> -->
+  
+    <Script>
         
-    //     var map = new mapboxgl.Map({
-    //         container: 'map',
-    //         style: 'mapbox://styles/mapbox/streets-v11',
-    //         center: [-71.104081, 42.36554],
-    //         zoom: 14
-    //     })
-
-    //     var marker = new mapboxgl.Marker()
-    //         .setLngLat([-71.092761, 42.357575])
-    //         .addTo(map);
-
-    // const busStops = [
-    //     [-71.093729, 42.359244], 
-    //     [-71.094915, 42.360175],
-    //     [-71.095800, 42.360698],
-    //     [-71.099558, 42.362953],
-    //     [-71.103476, 42.365248],
-    //     [-71.106067, 42.366806],
-    //     [-71.108717, 42.368355],
-    //     [-71.110799, 42.369192],
-    //     [-71.113095, 42.370218],
-    //     [-71.115476, 42.372085],
-    //     [-71.117585, 42.373016],
-    //     [-71.118625, 42.374863]
-    // ];
-
-    // let counter = 0;
-    // function move (){
-    //     setTimeout(() => {
-    //       if (counter >= busStops.length) return;
-    //       marker.setLngLat(busStops[counter]);
-    //       counter++;
-    //       move();  
-    //     },1000);
-    // }
-
-    // </script>
+    </Script>
 </body>
 </html>
