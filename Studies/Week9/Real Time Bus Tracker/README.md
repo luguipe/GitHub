@@ -1,4 +1,3 @@
-
 Title of the project: **Real Time Bus Tracker**
 
 Description of the project: What does the current project do?
