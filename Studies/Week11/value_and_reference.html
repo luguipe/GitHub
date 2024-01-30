@@ -1,0 +1,9 @@
+<script>
+let numbers = [1,2,3,4,5];
+//let mycopy = numbers; //if you do that, you'll make a reference to the array
+let mycopy = [...numbers]; //do this instead to copy an array without referencing it 
+mycopy[2] = 9;
+console.log(mycopy);
+console.log(numbers);
+
+</script>

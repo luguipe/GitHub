@@ -1,0 +1,18 @@
+<script>
+    var age = 20;
+    console.log(age);
+
+    age = 30;
+    console.log(age);
+
+    var age = 40;
+    console.log(age);
+
+    function userInfo(){
+        //if we remove the var declaration you make the variable global
+        var age = 20;
+        return age;
+    }
+    console.log(userInfo());
+    //console.log(age);
+</script>

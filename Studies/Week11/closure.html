@@ -1,0 +1,18 @@
+<script>
+    function outer(){
+        var counter = 1;
+
+        function inner(){
+            console.log(counter);
+            counter++;
+        }
+        return inner;
+    }
+var inner = outer();
+
+inner();
+inner();
+inner();
+
+
+</script>
