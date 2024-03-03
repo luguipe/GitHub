@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body>
+
+    <!-- we eill add our react component inside this div -->
+    <div id="root"></div>
+
+    <!-- load react -->
+    <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- load our react component -->
+    <script defer type="text/babel">
+    
+        function formatName(user){
+            return user.firstName + ' ' + user.lastName;
+        }
+
+        const user ={
+            firstName : 'Peter',
+            lastName : 'Parker',
+            age : 18
+        };
+
+        function getGreeting(user){
+            if(user.age >= 18){
+                return <h1>{formatName(user)} is an adult</h1>
+            }
+            return <h1>{formatName(user)} is an minor</h1>
+        }
+
+        ReactDOM.render(
+            getGreeting(user),
+            document.getElementById('root')
+        );
+        
+    </script>
+</body>
+</html>
+

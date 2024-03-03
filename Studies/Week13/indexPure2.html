@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+</head>
+<body>  
+    <form id="form">
+    <select id="year">
+        <option value="Freshman">Freshman</option>
+        <option value="Sophomore">Sophomore</option>
+        <option value="Junior">Junior</option>
+        <option value="Senior">Senior</option>
+    </select>
+    <div>Name</div>
+    <input type="text" id="name">
+    <div>Email</div>
+    <input type="text" id="email">
+    <div>Password</div>
+    <input type="text" id="password"> 
+    <div>
+        <input type="checkbox" id="checkbox">Remember me
+    </div>
+    <button onclick="handle(event)">Submit</button>
+</form>
+    <script>
+        function handle(e){
+            console.log(e.target.form.elements);
+            console.log(e.target.form.elements.year.value);
+            console.log(e.target.form.elements.name.value);
+            console.log(e.target.form.elements.email.value);
+            console.log(e.target.form.elements.password.value);
+            console.log(e.target.form.elements.checkbox.checked);
+            event.preventDefault();
+        }
+    </script>
+
+<div>
+    <form onSubmit={this.handleSubmit.bind(this)}>
+      <div>Name:</div>
+        <input type='text' id='name-for-order'></input>
+      <div>Size</div>
+        <select id='size'>
+          <option id='small'>Small</option>
+          <option id='medium'>Medium</option>
+          <option id='large'>Large</option>
+        </select>
+      <div>Pepperoni</div>
+        <input id='pepp' type='checkbox'/>
+      <div>Gluten Free</div>
+        <input id='g-free' type='checkbox'/>
+      <div>Quantity</div>
+        <input type='number' id='quantity'></input>
+
+      <div>Additional Instructions</div>
+        <input type='textarea'cols='50' rows='3' id='add-instr'></input>
+      <input id="form-submit" type="submit"/></input>
+    </form>
+  </div>
+</body>
+</html>
