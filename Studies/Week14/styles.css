@@ -1,0 +1,56 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #2b683a92;
+}
+
+code {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* App container styles */
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 30px;
+    background-color: #209cee;
+}
+
+/* Todo item styles */
+.todo {
+    background: #6ac4109e;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    padding: 3px 10px;
+    font-size: 24px;
+    margin-bottom: 6px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Input field styles */
+.input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    height: 2.25em;
+    font-size: 24px;
+    border-radius: 3px;
+}
+
+button {
+    background: #4c4d4d9e;
+    border: none;
+    padding: 1rem;
+    font-size: 24px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 1rem;
+}

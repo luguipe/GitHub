@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDos</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- don't use this in production: -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+  <h1>ToDos</h1>
+
+  <!-- Add react component inside this div-->
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+
+  <!-- load our react component -->
+  <script src='todo.js' defer type='text/babel'></script>
+  <script src='form.js' defer type='text/babel'></script>
+  <script src='index.js' defer type='text/babel'></script>
+</body>
+
+</html>
